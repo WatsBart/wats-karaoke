@@ -1,13 +1,17 @@
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import * as React from 'react'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
 const SongsPage = ({data: {allWpSong: {edges}}}) => {
     return(
         <Layout pageTitle="Songs of Wats Karaoke">
             {edges.map((song) => {
                 const songData = song.node.songMeta;
-                return <p key={song.node.id}>{songData.title} - {songData.singer}</p>
+                return (
+                  <div>
+                    <Link key={song.node.id} to={song.node.slug}>{songData.title} - {songData.singer}</Link> <br />
+                  </div>
+                )
             })}
         </Layout>
     )
@@ -23,6 +27,7 @@ query MyQuery {
             title
             singer
           }
+          slug
         }
       }
     }
