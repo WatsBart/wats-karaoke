@@ -8,9 +8,9 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { container, nav, navLinks, navLinkItem, navLinkText, siteTitle } from './layout.module.css'
-import Header from "./header"
+import { gatsbyLink, header, footer, logo, container, nav, navLinks, navLinkItem, navLinkText, siteTitle, content } from './layout.module.css'
 import "./layout.module.css"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -20,16 +20,29 @@ const Layout = ({ children }) => {
           title
         }
       }
+      file(url: {eq: "http://watskaraoke.local/wp-content/uploads/2022/12/logo.png"}) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED)
+        }
+      }
     }
   `)
 
+  const image = getImage(data.file)
+  console.log(children)
+
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
+      <div className="container">
         <nav className={nav}>
-          <header className={siteTitle}>
-            <h1>{data.site.siteMetadata.title}</h1>
+          <header className={header}>
+            <GatsbyImage 
+              className={logo} image={image} 
+              objectFit="fill"
+            />
+            <Link to="/" >
+              <h1 className={siteTitle}>{data.site.siteMetadata.title}</h1>
+            </Link>
           </header>
           <ul className={navLinks}>
             <li className={navLinkItem}>
@@ -49,11 +62,11 @@ const Layout = ({ children }) => {
             </li>
           </ul>
         </nav>
-        <main>{children}</main>
-        <footer>
+        <main className={content}>{children}</main>
+        <footer className={footer}>
           © {new Date().getFullYear()} &middot; Built with
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a className={gatsbyLink} href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
       </div>
     </>

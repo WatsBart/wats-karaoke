@@ -1,39 +1,94 @@
-html {
-  
+@font-face {
+    font-family: 'colonnaMt';
+    src: url('colonna.ttf');
 }
+
+
+html {
+
+}
+
 body {
-  
+    margin: 0;
 }
 
 .container {
-  
+    min-height: 100vh;
+}
+
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 10vh;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20vh;
+    width: 100%;
+    z-index: -1;
 }
 
 .site-title{
-  
-}
-
-.site-title::after{
-  
+    font-family: colonnaMt;
+    font-size: 4rem;
+    text-decoration: none;
+    color: #ffacf9;
+    position: absolute;
+    top: 6.5vh;
+    left: 2vw;
+    margin: 0;
 }
 
 .nav {
-  
+    height: 20vh;
 }
 
 .nav-links {
-  
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 5vh;
+  right: 8vw;
 }
 
 .nav-link-item {
-  
+  padding-right: 2rem;
 }
 
 .nav-link-text {
-  
+    text-decoration: none;
+    color: #ffacf9;
+    font-size: 3rem;
+    font-family: colonnaMt;
+}
+
+.content {
+    position: relative;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    min-height: 75vh;
 }
 
 .nav-link-text:hover {
   
 }
 
+.footer {
+    position: relative;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.gatsby-link {
+    
+}

@@ -11,8 +11,11 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `http://watskaraoke.local/graphql`
-      }
+        url: `http://watskaraoke.local/graphql`,
+        schema: {
+          timeout: 60000,
+        },
+      },
     },
     `gatsby-plugin-image`,
     {
