@@ -1,0 +1,43 @@
+.home-page {
+    
+}
+
+.section {
+    display: grid;
+    grid-template-areas: 
+    'title title'
+    'description image';
+}
+
+.homepage-title {
+    font-size: 3rem;
+    grid-area: title;
+}
+
+.homepage-description {
+    grid-area: description;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.homepage-image {
+    width: 100%;
+    grid-area: image;
+}
+
+
+
+.songs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.song-link-list {
+
+}
+
+.song-link {
+    color: #ffacf9;
+    font-size: 1.5rem;
+    font-weight: bold;
+}

@@ -1,0 +1,28 @@
+.featured-song {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.song-link {
+    display: flex;
+    justify-content: center;
+}
+
+.song-image {
+    width: 80%;
+}
+
+.song-info {
+    text-align: center;
+}
+
+.song-title {
+    text-decoration: none;
+    color: #ffacf9;
+}
+
+.song-language {
+    text-decoration: none;
+    color: #ffacf9;
+}

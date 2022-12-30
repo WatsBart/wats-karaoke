@@ -14,7 +14,7 @@ const AboutPage = () => {
             The assignment consists of creating a showroom of a product of choice using Headless Wordpress, GraphQL & Gatsby. Each 'product' has to have at least 7 attributes as well as a custom taxonomy.
           </p>
           <p>
-            This website is a showroom of songs that I sing with friends during karaoke. My name is Bart Wats. I am the only person working on this website.
+            This website is a showroom of songs that I sing with friends during karaoke. My name is Bart Wats. I am the only person working on this website. This website is not meant for actual use, it is merely for educational purposes.
           </p>
         </div>
       </div>

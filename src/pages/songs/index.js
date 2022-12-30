@@ -1,6 +1,7 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
 import Layout from '../../components/layout'
+import { songLink, songLinkList } from '../../page.module.css'
 
 const SongsPage = ({ data: { allWpSong: { edges } } }) => {
   return (
@@ -8,8 +9,8 @@ const SongsPage = ({ data: { allWpSong: { edges } } }) => {
       {edges.map((song) => {
         const songData = song.node.songMeta;
         return (
-          <div>
-            <Link key={song.node.id} to={song.node.slug}>{songData.title} - {songData.singer}</Link> <br />
+          <div className={songLinkList}>
+            <Link className={songLink} key={song.node.id} to={song.node.slug}>{songData.title} - {songData.singer}</Link> <br />
           </div>
         )
       })}
