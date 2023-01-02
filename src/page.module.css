@@ -34,19 +34,37 @@
     justify-content: space-between;
 }
 
-.song-link-list {
+.songlink-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 2rem;
+}
 
+.songlink-item {
+    border: 1px solid #ffacf9;
+    box-shadow: 0px 0px 15px black;
 }
 
 .song-link {
     color: #ffacf9;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+}
+
+.songlink-image {
+    object-fit: contain;
+}
+
+.songlink-text {
     font-size: 1.5rem;
+    text-align: center;
     font-weight: bold;
 }
 
 .song-page {
     display: flex;
-    
 }
 
 .video-column {
