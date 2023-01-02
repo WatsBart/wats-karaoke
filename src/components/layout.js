@@ -34,12 +34,13 @@ const Layout = ({ children }) => {
   
   return (
     <>
-      <div className="container">
+      <div className={container}>
         <nav className={nav}>
           <header className={header}>
             <GatsbyImage 
               className={logo} image={image} 
               objectFit="fill"
+              alt=""
             />
             <Link to="/" >
               <h1 className={siteTitle}>{data.site.siteMetadata.title}</h1>

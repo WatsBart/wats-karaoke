@@ -16,7 +16,7 @@ const IndexPage = ({
         <section className={section}>
           <h1 className={homepageTitle}>{homeFields.title}</h1>
           <p className={homepageDescription}>Welcome to Wats Karaoke. Here you can find songs with embedded youtube videos and lyrics so you can sing at your own leisure.</p>
-          <GatsbyImage image={image} className={homepageImage}/>
+          <GatsbyImage image={image} className={homepageImage} alt="" />
         </section>
         <section className={featuredSection}>
           <h2>Featured Songs</h2>

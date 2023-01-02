@@ -11,6 +11,7 @@ const Song = ({ song, slug }) => {
                 <GatsbyImage
                     image={thumbnail}
                     className={songImage}
+                    alt=""
                 />
             </Link>
             <article className={songInfo}>
