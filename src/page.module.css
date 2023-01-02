@@ -9,6 +9,10 @@
     'description image';
 }
 
+.featured-section {
+    
+}
+
 .homepage-title {
     font-size: 3rem;
     grid-area: title;
@@ -25,11 +29,9 @@
     grid-area: image;
 }
 
-
-
 .songs {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .song-link-list {
@@ -40,4 +42,80 @@
     color: #ffacf9;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.song-page {
+    display: flex;
+    
+}
+
+.video-column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-right: 5vw;
+    width: 32vw;
+}
+
+.lyrics-column {
+    font-size: 1.3rem;
+}
+
+.embedded-video {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 32vw;
+    height: 18vw;
+}
+
+.description-box {
+    border-color: #ffacf9;
+    box-shadow: 0px 0px 5px #ffacf9;
+    border-radius: 1rem;
+    text-align: left;
+}
+
+.description-box legend {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.associated-media {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.associated-media p {
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
+}
+
+.learn-progress {
+    border: 3px solid #ffacf9;
+    height: 4rem;
+    text-align: left;
+}
+
+.learn-progress legend {
+    font-size: 1.3rem;
+}
+
+.progress-bar {
+    height: 2rem;
+}
+
+.progress-bar div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-bar div div {
+    background-color: #ffacf9;
+    width: 20%;
+    height: 80%;
+    margin-left: 1%;
 }

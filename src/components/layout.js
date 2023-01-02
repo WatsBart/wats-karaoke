@@ -20,17 +20,18 @@ const Layout = ({ children }) => {
           title
         }
       }
-      file(url: {eq: "http://watskaraoke.local/wp-content/uploads/2022/12/logo.png"}) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
+      wpMediaItem(filename: {eq: "logo.png"}) {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED)
+          }
         }
       }
     }
   `)
 
-  const image = getImage(data.file)
-  console.log(children)
-
+  const image = getImage(data.wpMediaItem.localFile)
+  
   return (
     <>
       <div className="container">

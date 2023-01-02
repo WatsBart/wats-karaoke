@@ -73,7 +73,9 @@ body {
     margin-right: 2.5vw;
     margin-top: 0;
     margin-bottom: 0;
+    padding: 2.5vw;
     min-height: 75vh;
+    text-shadow: 0px 0px 5px #ffacf9;
 }
 
 .nav-link-text:hover {
