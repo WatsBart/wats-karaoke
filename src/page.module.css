@@ -29,6 +29,25 @@
     grid-area: image;
 }
 
+.input-label {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.input-field {
+    width: 30vw;
+    height: 2rem;
+    font-size: 1.5rem;
+    color: #ffacf9;
+    background-color: #9b008b;
+    border: 1px solid #ffacf9;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ffacf9;
+    padding-left: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
 .songs {
     display: flex;
     justify-content: space-between;
@@ -36,7 +55,7 @@
 
 .songlink-list {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, minmax(0,1fr));
     grid-gap: 2rem;
 }
 
