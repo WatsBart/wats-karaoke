@@ -29,6 +29,54 @@
     grid-area: image;
 }
 
+input, button, textarea, .form-field {
+    background-color: #9b008b;
+    border: 1px solid #ffacf9;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0 0 5px #ffacf9;
+    color: #ffacf9;
+    margin: .3rem;
+}
+
+.form-section {
+    display: flex;
+    justify-content: center;
+}
+
+.form-field {
+    width: 40vw;
+    background-color: #4c0042;
+}
+
+.form-field legend {
+    font-size: 1.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form input {
+    width: 40%;
+}
+
+.form textarea {
+    background-color: #9b008b;
+    border: 1px solid #ffacf9;
+    border-radius: 10px;
+    padding-left: 10px;
+    box-shadow: 0 0 5px #ffacf9;
+}
+
+.form button {
+    width: fit-content;
+    background-color: #9b008b;
+    color: #ffacf9;
+}
+
 .input-label {
     font-size: 1.8rem;
     font-weight: bold;
@@ -38,12 +86,6 @@
     width: 30vw;
     height: 2rem;
     font-size: 1.5rem;
-    color: #ffacf9;
-    background-color: #9b008b;
-    border: 1px solid #ffacf9;
-    border-radius: 10px;
-    box-shadow: 0 0 5px #ffacf9;
-    padding-left: 10px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }

@@ -3,19 +3,19 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
 import Layout from "../components/layout"
 import Song from "../components/song"
-import { homepageTitle, homepageDescription, songs, section, featuredSection, homePage, homepageImage } from '../page.module.css'
+import { homepageTitle, homepageDescription, songs, section, featuredSection, homePage, homepageImage, form, formField, formSection } from '../page.module.css'
 
 const IndexPage = ({
   data: {
     wpPage: { homeFields }
   } }) => {
-    const image = getImage(homeFields.picture.localFile)
+  const image = getImage(homeFields.picture.localFile)
   return (
     <Layout>
       <div className={homePage}>
         <section className={section}>
           <h1 className={homepageTitle}>{homeFields.title}</h1>
-          <p className={homepageDescription}>Welcome to Wats Karaoke. Here you can find songs with embedded youtube videos and lyrics so you can sing at your own leisure.</p>
+          <p className={homepageDescription}>{homeFields.description}</p>
           <GatsbyImage image={image} className={homepageImage} alt="" />
         </section>
         <section className={featuredSection}>
@@ -27,6 +27,25 @@ const IndexPage = ({
             })}
           </article>
         </section>
+        <section className={formSection}>
+          <fieldset className={formField}>
+            <legend>Contact</legend>
+            <form className={form} name="contact" method="POST" data-netlify="true">
+              <label>Your first name:</label>
+              <input type="text" name="firstName" required={true} />
+              <label>Your last name:</label>
+              <input type="text" name="lastName" required={true} />
+              <label>Your e-mail:</label>
+              <input type="email" name="email" required={true} />
+              <label>Subject:</label>
+              <input type="text" name="subject" required={true} />
+              <label>Your message:</label>
+              <textarea name="message" required={true}></textarea>
+              <input type="hidden" name="form-name" value="contact" />
+              <button type="submit">Send</button>
+            </form>
+          </fieldset>
+        </section>
       </div>
     </Layout>
   )
@@ -37,6 +56,7 @@ query {
   wpPage(slug: {eq: "home-page"}) {
     homeFields {
       title
+      description
       fieldGroupName
       featuredSongs {
         ... on WpSong {
