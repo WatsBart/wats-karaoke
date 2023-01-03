@@ -2,20 +2,45 @@ import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import * as React from 'react'
 import Layout from '../../components/layout'
-import { songLink, songlinkList, songlinkImage, songlinkItem, songlinkText, inputLabel, inputField } from '../../page.module.css'
+import { songLink, songlinkList, songlinkImage, songlinkItem, songlinkText, inputLabel, inputField, genreSelector, sorters } from '../../page.module.css'
 
 const SongsPage = ({ data: { allWpSong: { edges } } }) => {
-  const [query,setQuery] = React.useState("")
-  console.log(edges)
+  const [query, setQuery] = React.useState("")
+  const [songs, setSongs] = React.useState(edges)
+  const allGenres = [];
+  edges.forEach(song => {
+    song.node.genres.nodes.forEach(genre => {
+      if (!allGenres.includes(genre.name)) allGenres.push(genre.name)
+    });
+  });
+
+  const filterByGenre = (genre) => {
+    if (genre === "All") {
+      setSongs(edges)
+    } else {
+      setSongs(edges.filter((song) => song.node.genres.nodes.filter((node) => node.name === genre).length > 0))
+    }
+  }
+
   return (
     <Layout pageTitle="Songs of Wats Karaoke">
-      <form>
-        <label className={inputLabel}>Search songs by title</label><br/>
-        <input className={inputField} type="text" value={query} onChange={(event)=>{setQuery(event.target.value);console.log(event.target.value)}}/>
-      </form>
-      <br/>
+      <div className={sorters}>
+        <div>
+          <label className={inputLabel}>Search songs by title</label><br />
+          <input className={inputField} type="text" value={query} onChange={(event) => { setQuery(event.target.value) }} />
+        </div>
+        <div>
+          <label className={inputLabel}>Search songs by genre</label><br />
+          <select className={genreSelector} onChange={(event) => filterByGenre(event.target.value)}>
+            <option value="" disabled selected>Select a genre</option>
+            <option value="All">All</option>
+            {allGenres.map((genre) => <option placeholder="genre">{genre}</option>)}
+          </select>
+        </div>
+
+      </div>
       <div className={songlinkList}>
-        {edges.filter((song) => song.node.songMeta.title.toUpperCase().includes(query.toUpperCase())).map((song) => {
+        {songs.filter((song) => song.node.songMeta.title.toUpperCase().includes(query.toUpperCase())).map((song) => {
           const songData = song.node.songMeta;
           const thumbnail = getImage(songData.picture.localFile)
           return (
@@ -60,6 +85,11 @@ query MyQuery {
         }
         slug
         id
+        genres {
+          nodes {
+            name
+          }
+        }
       }
     }
   }

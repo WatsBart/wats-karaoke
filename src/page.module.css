@@ -29,7 +29,7 @@
     grid-area: image;
 }
 
-input, button, textarea, .form-field {
+input, button, textarea, select, .form-field {
     background-color: #9b008b;
     border: 1px solid #ffacf9;
     border-radius: 10px;
@@ -75,6 +75,15 @@ input, button, textarea, .form-field {
     width: fit-content;
     background-color: #9b008b;
     color: #ffacf9;
+}
+
+.about-title {
+    margin: 1rem;
+}
+
+.about-description {
+    margin: 2rem;
+    font-size: 1.2rem;
 }
 
 .input-label {
@@ -126,6 +135,28 @@ input, button, textarea, .form-field {
 
 .song-page {
     display: flex;
+}
+
+.genres {
+    text-align: left;
+}
+
+.sorters {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 1rem 0;
+}
+
+.sorters div:nth-child(2) {
+    text-align: right;
+}
+
+.genre-selector {
+    width: 20vw;
+    height: 2rem;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
 .video-column {
