@@ -48,12 +48,6 @@ const SongPage = ({ data: { wpSong } }) => {
         <div className={lyricsColumn}>
           {songData.lyrics}
         </div>
-        <div>
-          <StaticImage
-            className={spotlight}
-            src="http://2.bp.blogspot.com/-ObHXNpbpr1k/VD7m9esOwqI/AAAAAAAAOzI/wIB75_GY1yU/s1600/Spotlight.jpg"
-          />
-        </div>
       </div>
     </Layout>
   )
