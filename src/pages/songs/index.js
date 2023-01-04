@@ -18,7 +18,7 @@ const SongsPage = ({ data: { allWpSong: { edges } } }) => {
     if (genre === "All") {
       setSongs(edges)
     } else {
-      setSongs(edges.filter((song) => song.node.genres.nodes.filter((node) => node.name === genre).length > 0))
+      setSongs(edges.filter((song) => song.node.genres.nodes.filter((node) => node.name.toUpperCase() === genre.toUpperCase()).length > 0))
     }
   }
 
@@ -34,10 +34,9 @@ const SongsPage = ({ data: { allWpSong: { edges } } }) => {
           <select className={genreSelector} onChange={(event) => filterByGenre(event.target.value)}>
             <option value="" disabled selected>Select a genre</option>
             <option value="All">All</option>
-            {allGenres.map((genre) => <option placeholder="genre">{genre}</option>)}
+            {allGenres.map((genre) => <option>{genre.toUpperCase()}</option>)}
           </select>
         </div>
-
       </div>
       <div className={songlinkList}>
         {songs.filter((song) => song.node.songMeta.title.toUpperCase().includes(query.toUpperCase())).map((song) => {
